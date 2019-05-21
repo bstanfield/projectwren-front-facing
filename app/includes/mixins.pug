@@ -121,7 +121,7 @@ mixin splitStringOnBreak(string)
     - console.log(splitArr);
     each split in splitArr
         .par-section
-            h4=split
+            h4!=split
 
 mixin callToAction()
     +spacer(6)
@@ -141,6 +141,24 @@ mixin textBlock(text)
         h4.sub!=text.sub
     if text.par
         +splitStringOnBreak(text.par)
+
+mixin textBlockHero(text)
+    .hero-container
+      .hero-card
+        .hero-text
+          h1.hero=text.header
+          h4.hero!=text.sub
+          +form('hero')
+
+mixin bigNumberBlock(obj)
+    .flex.center-flex
+        .section-number
+            h1.large=obj.number
+        .section-text(class!=attributes.class)
+            img(src='images/' + obj.image style!=attributes.style)
+            h1!=obj.header
+    +spacer()
+    h4!=obj.par
 
 mixin list(itemObj)
     ul

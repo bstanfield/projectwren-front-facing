@@ -1,0 +1,104 @@
+//- INCLUDES > MIXINS
+-
+    const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
+
+mixin article(url, p, t, a, i)
+    .card.article.card-spacer
+        .jank-tape
+            img(src='images/home-bluetape.png')
+        a(href=url target="_blank")
+            .card-content
+                h4.publisher #{p}
+                h1.title #{t}
+                h4.author by #{a} 
+                h4.info #{i} 
+
+mixin herocard-small(main, blurb, img)
+    .primary-container-hero
+        .hero-card.hc-short
+            .hero-text
+                h1.hero.white #{main}
+                h4.hero.white #{blurb}
+            .hero-image
+                img.beta-img(src=imgpath + img)
+
+mixin blogcards(url, img, source, title, author, url2, img2, source2, title2, author2, url3, img3, source3, title3, author3)
+    .flex
+        .column
+            a(href=url target="_blank")
+                .card.blogcard.shadow
+                    .blogthumb(style="background-image: url("+imgpath+"blog/"+img+");")
+                    p.source #{source}
+                    h4 #{title}
+                    p.byline #{author}
+        .column
+            a(href=url2 target="_blank")
+                .card.blogcard.shadow
+                    .blogthumb(style="background-image: url("+imgpath+"blog/"+img2+");")
+                    p.source #{source2}
+                    h4 #{title2}
+                    p.byline #{author2}
+        .column
+            a(href=url3 target="_blank")
+                .card.blogcard.shadow
+                    .blogthumb(style="background-image: url("+imgpath+"blog/"+img3+");")
+                    p.source #{source3}
+                    h4 #{title3}
+                    p.byline #{author3}
+            
+mixin code(url, content)
+    a(target="_blank" href=url)
+        span.code #{content}
+
+mixin question(qa)
+    h2
+        span(id=qa.hash)  
+    h2!=qa.q
+    h4!= qa.a
+
+mixin menu(week)
+    each item in week
+        .dish
+            img(src=item.src)
+            h4 <strong>!{item.name}</strong>
+            p!=item.sub
+            if item.price
+                .price
+                    p $#{item.price}
+
+mixin form(hero)
+    if hero
+        form(action="https://picnic385059.typeform.com/to/jv1HLB" method="GET" target="_blank")
+            input.input-box.input-nav.fatty(type="email" placeholder="Enter email" name="email" required)
+            input.button.hero-btn(type="submit" value=buttonVal)
+    else
+        form(action="https://picnic385059.typeform.com/to/jv1HLB" method="GET" target="_blank")
+          input.input-box.input-nav(type="email" placeholder="Enter email" name="email" required)
+          input.button.button-nav-green(type="submit" value=buttonVal)
+
+mixin icon(c)
+    i(class=c)
+
+mixin navItems()
+    a.nav-link.display-hide(href='what-is.html') What is carbon neutral?
+    a.nav-link(href='how.html') How it works
+    a.nav-link(href='partners.html') Partners
+    a.nav-link.demo-link(href='') #{buttonVal}
+
+mixin infoLink(obj)
+    - const completeDef = `<strong>${capitalize(obj.text)} (${obj.type})</strong><br> ${obj.tippyContent}`;
+    a.tippy.skipper-theme(data-tippy-content!=completeDef) #{obj.text}#[sup ?]
+
+mixin offsetCard(obj)
+    a(href=obj.url)
+        .card-container
+            .card-background-img(style="background-image: linear-gradient(0deg,rgba(0, 0, 0, .3),rgba(0, 0, 0, 0.1)), url(" + obj.bg + ")")
+                .card-background-content
+                    img(src='images/' +  obj.smallImg)
+                    h1(style="max-width: 300px;")=obj.header
+            .card-text
+                h4 !{obj.text}
+                a(href=obj.url) View projects →

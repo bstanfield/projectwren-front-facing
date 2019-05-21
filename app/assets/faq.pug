@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .primary-container
+        br
+        br
+        br
+        br
+        br
+        br
+        .stretch-container
+            .stretch(style="background-image: url('../images/picnic-plate-collection.JPG')")
+        .container
+           .post
+                h1 Frequently Asked Questions
+                h4.
+                    When we talk with customers we get a lot of questions around dietary constraints, nutrition, price, and our plan to save the planet. 🌎
+
+                h4. 
+                    So, we've decided to compile a rolling list of frequently asked questions.
+
+                +question({
+                    q: 'How expensive are meals on Picnic?',
+                    a: `For now, all of our baskets are priced at $8. However, we're still experimenting with what we want our customers to eat and also learn what they enjoy most, so this might change in the near future.`
+                })
+
+                +question({
+                    q: 'What happens when I join the waitlist?',
+                    a: `We're still a very small operation right now. Joining the waitlist gets you in line for your first basket, but we can't get guarantee a shipping date. Joining the list also means you'll stay up to date on any messages we're sending out to customers.`
+                })
+
+                +question({
+                    q: `What's in a meal?`,
+                    a: `Our last menu consisted of three full, plant-based meals, including a California-inspired Congee dish and a Fennel Cassoulet. All of our meals cost a flat $8 and is delivered with extended information about the dish. `
+                })
+
+

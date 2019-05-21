@@ -1,0 +1,81 @@
+head
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width")
+  <meta name="google-site-verification" content="SFBZWqH5jLQ-vvjGewZmi5mvYXfsJ2d5U3qLem1wUX0" />
+
+  //- FontAwesome
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  //- CSS Compile & Google Fonts
+  link(rel="stylesheet" href="/app.css")
+  <link href="https://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet">
+  
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-121010767-1');
+
+  -
+    const og = {
+      url: 'wrencarbon.com',
+      site_name: 'Project Wren',
+      title: 'Go carbon zero with Project Wren.',
+      description: 'Wren helps you reach net carbon neutral by offsetting personal or family greenhouse gas emissions.',
+      image: ''
+    }
+
+  //- OpenGraph Properties
+  meta(property="og:type" content="website")
+  meta(property="og:url" content=og.url)
+  meta(property="og:site_name" content=og.site_name)
+  meta(property="og:title" content=og.title)
+  meta(property="og:description" content=og.description)
+  meta(property="og:image" content=og.image)
+  
+  //- Twitter Card
+  meta(name='twitter:card' content='summary_large_image')
+  meta(name='twitter:domain' value=og.url)
+  meta(name='twitter:title' value=og.title)
+  meta(name='twitter:description' value=og.description)
+  meta(name='twitter:image' content=og.image)
+  meta(name='twitter:url' value=og.url)
+  
+  //- Site Title
+  title=og.title
+
+  //- Favicon
+  <link rel="icon" href="../images/picnic-ico.png" />
+
+  //- Compiled Scripts
+  script(src="/vendor.js")
+  script(src="/app.js")
+  <script>require('js/main.js')</script>
+
+  //- INTERCOM
+  script.
+    window.intercomSettings = {
+      app_id: 'd2qx1f2z'
+    };
+
+  //- Google Tag Manager
+  script.
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WP98BSK');
+  
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-799084191');
+
+
+  script.
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/d2qx1f2z';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()

@@ -1,0 +1,119 @@
+extends layout-home
+
+block content
+  .background-hero-image
+    .background-hero-overlay
+    <video autoplay muted loop id='videoContainer'>
+      <source src="images/shorter-chinese-terraces.mp4" type="video/mp4">
+    </video>
+    .hero-container
+      .hero-card
+        .hero-text
+          h1.hero=index.hero.header
+          h4.hero!=index.hero.sub
+          +form('hero')
+
+  br
+  br
+  .primary-container
+      .centered
+        .img-raised
+          img(src='images/carbon-graphic1.png' style='width: 300px;')
+        h1=index.par1.header
+        h4(style='max-width: 600px;')!=index.par1.sub
+
+      br
+      br
+
+      .centered
+        br
+        br
+        .flex.center-flex
+          .section-number
+            h1.large 1
+          .section-text
+            img(src='images/skipper3-assets4.png' style='width: 150px; height: auto')
+            h1=index.par3.header
+        br
+        h4!=index.par3.sub
+      br
+      br
+      .flex
+        +offsetCard(index.cards[0])
+        +offsetCard(index.cards[1])
+      .flex
+        +offsetCard(index.cards[2])
+
+      br
+      br
+      br
+      br
+
+      .centered
+        br
+        br
+        .flex.center-flex
+          .section-number
+            h1.large 2
+          .section-text.bump-up
+            img(src='images/wren-calculator.png' style='width: 90px; height: auto; padding-bottom: 5px !important;')
+            h1=index.par2.header
+        br
+        h4!=index.par2.sub
+
+      .div(style='height: 600px; width: 100%; background-color: lightgrey; margin-top: 50px;')
+
+      br
+      br
+      br
+      .centered
+        br
+        br
+        .flex.center-flex
+          .section-number
+            h1.large 3
+          .section-text
+            img(src='images/skipper3-assets4.png' style='width: 150px; height: auto')
+            h1=index.par4.header
+        br
+        h4!=index.par4.sub
+        br
+        //- h4.
+        //-   Send a sample update to your phone:
+        //- form(action='')
+        //-   input(type='text' placeholder='Enter phone number')
+        //-   button Submit
+        br
+
+        img(src='images/skipper3-assets5.png' style='max-width: 500px; width: 90%;margin: auto;')
+      
+      br
+      br
+      br
+      br
+      - var date = new Date;
+      .centered
+        h1 Ready to get started?
+        h4 Start offsetting your #[strong #{date.toLocaleString('en-us', { month: 'long' })}] emissions in five minutes.
+        br
+        br
+
+        +form()
+
+  
+  
+  
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
+  
+  script.
+    tippy('.tippy', {
+      theme: 'skipper',
+      animation: 'shift-away',
+      animateFill: false,
+      duration: 200,
+      arrow: true,
+      arrowType: 'round',
+      allowHTML: true,
+      trigger: 'click mouseenter'
+    })

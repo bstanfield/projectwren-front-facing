@@ -1,67 +1,76 @@
 extends layout-home
 block content
-  include ../includes/data_how.pug
   .bg-full
-    h1=how.hero
+    h1 How it works
   .reg-height
   .primary-container
     .article
       +spacer()
-      h1=how.par1.header
-      h4=how.par1.sub
-      +spacer(2)
+      +textBlock({
+        header: 'Using Wren is easy.',
+        par: `It takes just a few minutes to get your carbon accounting setup, then we'll keep you updated as we offset your carbon footprint.`
+      })
+      +spacer()
       img(src='images/wren-calculator.png' style='width: 75px; height: auto;')
       +spacer(2)
-      h1=how.section1.header
+      +textBlock({
+        header: 'Carbon Accounting',
+        sub: 'Establishing your carbon "baseline"',
+        par: 'A few aspects of your lifestyle dominate the majority of your carbon emissions. We calculate your individual carbon footprint by looking at these factors:'
+      })
+
+      +list({
+        items: [
+          `<strong>Postal code</strong> (this forms the basis of our estimate—typically, folks who live in a certain zip code get electricity from the same sources, buy similar products, and in general have elements of their carbon footprint in common)`,
+          `<strong>Driving and transportation habits</strong> (usually the biggest contributor to individual carbon footprint, by a wide margin)`,
+          `<strong>Heating and air conditioning usage</strong> (another large contributor)`,
+          `<strong>What you eat</strong>(Vegetarians and vegans have little carbon footprint from their diet, whereas folks who eat a lot of red meat have larger carbon footprints coming from diet)  `
+        ]
+      })
+
+      +textBlock({
+        sub: 'Spikes',
+        par: `When you go on vacation or move, your carbon footprint might deviate substantially from its baseline. Going on a single flight might emit more tons of CO2 than you normally would in a whole month. With Wren, you can log your flights, road trips, and shipping to make sure the spikes in your carbon footprint are offset.`
+      })
+
+      +textBlock({
+        sub: 'Offsetting your footprint',
+        par: `Once you have your carbon accounting setup, Wren will begin offsetting immediately. If you'd like, you may also offset your emissions for the previous 12 months.`
+      })
+
+      +textBlock({
+        sub: 'Offset projects',
+        par: `Wren works with a number of organizations around the world to offset carbon emissions. We prioritize 3 criteria when selecting our offset projects:`
+      })
+
+      +list({
+        items: [
+          `<strong>Measurable</strong> - We only support projects that have a clear protocol for measuring how much greenhouse gas they prevented or sequestered. This way, you can be sure projects you support offset as much carbon as they claim to.`,
+          `<strong>Additional</strong> - All projects we support would not happen without your help. In general, they're not economically feasible without being paid for the CO2 they offset.`,
+          `<strong>Transparent</strong> - We prioritize projects that share as much information as possible. This way, anyone can verify that the offset project is additional, measurable, and overall a great way to make some small dent in the climate crisis we face.`
+        ]
+      })
       
-      // Establishing baseline
-      h4.sub=how.section1.sub   
-      h4!=how.section1.body1
-      ul
-        li #[strong Postal code] (this forms the basis of our estimate—typically, folks who live in a certain zip code get electricity from the same sources, buy similar products, and in general have elements of their carbon footprint in common)
-        li #[strong Driving and transportation habits] (usually the biggest contributor to individual carbon footprint, by a wide margin)
-        li #[strong Heating and air conditioning usage] (another large contributor)
-        li #[strong What you eat] (Vegetarians and vegans have little carbon footprint from their diet, whereas folks who eat a lot of red meat have larger carbon footprints coming from diet)     
-      h4!=how.section1.body2
       +spacer()
-      
-      // Spikes
-      h4.sub=how.section2.header
-      h4!=how.section2.sub
+
+      +textBlock({
+        header: 'Your portfolio',
+        par: `
+          Every offset project is different. They will have different costs per ton of CO2 they offset, they will support different communities, and have different timelines.
+
+          In Wren, you have a "portfolio" of projects that you support each month. By default, your portfolio will have several diverse projects that are safe bets—they are affordable ways to offset carbon, they support communities that need help, and they are proven methods of preventing or sequestering carbon permanently. If you'd like, you can customize your portfolio to choose the carbon offset projects you like best.
+        `
+      })
       +spacer()
-      
-      // Offsetting your footprint
-      h4.sub=how.par2.header
-      h4=how.par2.sub
-      +spacer()
-      
-      // Offset projects
-      h4.sub=how.section3.header
-      h4=how.section3.sub
-      ul
-        li #[strong Measurable] - We only support projects that have a clear protocol for measuring how much greenhouse gas they prevented or sequestered. This way, you can be sure projects you support offset as much carbon as they claim to.
-        li #[strong Additional] - All projects we support would not happen without your help. In general, they're not economically feasible without being paid for the CO2 they offset.
-        li #[strong Transparent] - We prioritize projects that share as much information as possible. This way, anyone can verify that the offset project is additional, measurable, and overall a great way to make some small dent in the climate crisis we face.
-      +spacer(2)
 
-      // Your portfolio
-      h1=how.section4.header
-      h4!=how.section4.sub
-      +spacer(2)
+      +textBlock({
+        header: 'Tracking your impact',
+        par: `
+          Once you've made an offset, we send you detailed updates on the project once a quarter. We also give you full access to all documentation and data we have from the project, so you can see in as much detail as you like how a project works.
+        `
+      })
 
-      // Tracking your impact
-      h1=how.section5.header
-      h4!=how.section5.sub
-
-    +spacer(6)
-    - var date = new Date;
-    .centered
-      h1 Ready to get started?
-      h4 Start offsetting your #[strong #{date.toLocaleString('en-us', { month: 'long' })}] emissions in five minutes.
-      br
-      br
-
-      +form()
+    +callToAction()
 
 
 

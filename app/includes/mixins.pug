@@ -115,10 +115,38 @@ mixin spacer(x)
 
 
 mixin splitStringOnBreak(string)
-    - let splitArr = string.split("\n")
+    - let splitArr = string.split("\n");
+    - splitArr = splitArr.filter(x => x != '');
+    - splitArr = splitArr.filter(x => x != '        ');
+    - console.log(splitArr);
     each split in splitArr
         .par-section
             h4=split
+
+mixin callToAction()
+    +spacer(6)
+    - var date = new Date;
+    .centered
+      h1 Ready to get started?
+      h4 Start offsetting your #[strong #{date.toLocaleString('en-us', { month: 'long' })}] emissions in five minutes.
+      br
+      br
+
+      +form()
+
+mixin textBlock(text)
+    if text.header
+        h1!=text.header
+    if text.sub
+        h4.sub!=text.sub
+    if text.par
+        +splitStringOnBreak(text.par)
+
+mixin list(itemObj)
+    ul
+        each item in itemObj.items
+            li!=item
+
 
 
 

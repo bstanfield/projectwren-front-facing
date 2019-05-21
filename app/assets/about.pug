@@ -1,34 +1,46 @@
 extends layout-home
 block content
-  include ../includes/data_about.pug
   .bg-full
-    h1=about.hero
+    h1 About us
   .reg-height
   .primary-container
     .article
-      h1 About us
-      +splitStringOnBreak(about.body[0])
+      +textBlock({
+        header: 'About us',
+        par: `We're a group of students and recent graduates working to mitigate climate change. We built Wren because carbon emissions as an individual are        currently unavoidable, but we don't want to be responsible for the climate crisis.
+
+              We know it will take more than carbon offsets to stop the climate crisis, but we think allowing individuals to offset their carbon footprint is a promising first step.`
+      })
       +spacer()
-      h1=about.headers[0]
-      h4.sub=about.subs[0]
-      +spacer()
-      h4 We have 2 success metrics for this goal:
-      ul
-        li Metric tons of CO2 equivalent prevented from entering the atmosphere
-        li Metric tons of CO2 equivalent pulled from the atmosphere and permanently sequestered
-        +spacer()
 
-      +splitStringOnBreak(about.body[1])
+      +textBlock({
+        header: 'Our intention',
+        sub: `We intend to mitigate the climate crisis by letting individuals track and offset their carbon footprint.`,
+        par: `We have 2 success metrics for this goal:`
+      })
 
-    +spacer(6)
-    - var date = new Date;
-    .centered
-      h1 Ready to get started?
-      h4 Start offsetting your #[strong #{date.toLocaleString('en-us', { month: 'long' })}] emissions in five minutes.
-      br
-      br
+      +list({
+        items: [
+          'Metric tons of CO2 equivalent prevented from entering the atmosphere',
+          'Metric tons of CO2 equivalent pulled from the atmosphere and permanently sequestered'
+        ]
+      })
 
-      +form()
+      +textBlock({
+        par: `
+          We hope that governments will collaborate to prevent greenhouse gas emissions to prevent the looming climate crisis we face. But until governments take decisive action, we can act as a catalyst to fund projects that prevent emissions.
+
+          In the long term, we expect that we will need to sequester large amounts of carbon from the atmosphere in order to restore our climate to its natural equilibrium. Wren is a way for individuals to fund this sequestration.
+
+          We started Wren because current marketplaces for individuals to offset their carbon are not transparent enough. Carbon sequestration is notoriously difficult to measure—if a forest is planted, how much carbon does it sequester? Is it replacing another carbon sink? How much carbon was already being stored in the soil, and how much did the new forest contribute? In addition to measurement difficulties, it's often unclear how the money for the carbon offset is being spent. Is it being efficiently used to protect rainforest at the lowest cost and benefit a community in need? Or is half of it going to the CEO's salary? By providing more transparency into how exactly these projects work, we will be sure about their effectiveness.
+          
+          To make it easier for an individual to offset their carbon footprint, we will also build tools that let individuals track their carbon footprint and find ways they can reduce it.
+
+          Overall, we want to reverse climate change. This seems like the best way for us to contribute.
+        `
+      })
+
+    +callToAction()
 
 
 

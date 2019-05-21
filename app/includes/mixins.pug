@@ -83,7 +83,7 @@ mixin icon(c)
     i(class=c)
 
 mixin navItems()
-    a.nav-link.display-hide(href='what-is.html') What is carbon neutral?
+    a.nav-link(href='about.html') About us
     a.nav-link(href='how.html') How it works
     a.nav-link(href='partners.html') Partners
     a.nav-link.demo-link(href='') #{buttonVal}
@@ -113,6 +113,12 @@ mixin spacer(x)
         br
         - num--
 
+
+mixin splitStringOnBreak(string)
+    - let splitArr = string.split("\n")
+    each split in splitArr
+        .par-section
+            h4=split
 
 
 

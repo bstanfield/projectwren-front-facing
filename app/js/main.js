@@ -1,18 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
   var $ = require('jquery');
+  $('.nav-fixed').hide()
 
   // Navbar scroll
-  $(document).scroll(function () {
-    var scroll = $(this).scrollTop();
-    if (scroll > 655) {
-      $('.nav-fixed .nav-items').css('background-color', '#F4F3F0', 'border-bottom', '0px solid grey');
-
-      $('.nav-fixed').css('opacity', '100');
-    } else {
-      $('.nav-fixed .nav-items').css('background-color', 'transparent', 'border-bottom', '1px solid grey');
-      $('.nav-fixed').css('opacity', '0');
-    }
-  });
+  if ($('.background-hero-image').length > 0) {
+    $(document).scroll(function () {
+      var scroll = $(this).scrollTop();
+      if (scroll > 655) {
+        $('.nav-fixed').show()
+        $('.nav-fixed .nav-items').css('background-color', '#F4F3F0', 'border-bottom', '0px solid grey');
+        $('.nav-fixed').css('opacity', '100');
+      } else {
+        $('.nav-fixed .nav-items').css('background-color', 'transparent', 'border-bottom', '1px solid grey');
+        $('.nav-fixed').css('opacity', '0');
+      }
+      if (scroll < 50 && scroll >= 0) {
+        $('.nav-fixed').hide()
+      }
+    });
+  } else {
+    $(document).scroll(function () {
+      var scroll = $(this).scrollTop();
+      if (scroll > 350) {
+        $('.nav-fixed').show()
+        $('.nav-fixed .nav-items').css('background-color', '#F4F3F0', 'border-bottom', '0px solid grey');
+        $('.nav-fixed').css('opacity', '100');
+      } else {
+        $('.nav-fixed .nav-items').css('background-color', 'transparent', 'border-bottom', '1px solid grey');
+        $('.nav-fixed').css('opacity', '0');
+      }
+      if (scroll < 50 && scroll >= 0) {
+        $('.nav-fixed').hide()
+      }
+    });
+  }
+  
 
   // Dynamic tooltips?
   let tooltips = {

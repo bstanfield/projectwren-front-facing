@@ -13,8 +13,7 @@ block content
           h4.hero!=index.hero.sub
           +form('hero')
 
-  br
-  br
+  +spacer(2)
   .primary-container
       .centered
         .img-raised
@@ -22,8 +21,7 @@ block content
         h1=index.par1.header
         h4(style='max-width: 600px;')!=index.par1.sub
 
-      br
-      br
+      +spacer(2)
 
       .centered
         br
@@ -36,18 +34,14 @@ block content
             h1=index.par3.header
         br
         h4!=index.par3.sub
-      br
-      br
+      +spacer(2)
       .flex
         +offsetCard(index.cards[0])
         +offsetCard(index.cards[1])
       .flex
         +offsetCard(index.cards[2])
 
-      br
-      br
-      br
-      br
+      +spacer(4)
 
       .centered
         br
@@ -63,34 +57,28 @@ block content
 
       .div(style='height: 600px; width: 100%; background-color: lightgrey; margin-top: 50px;')
 
-      br
-      br
-      br
+      +spacer(3)
       .centered
-        br
-        br
+        +spacer(2)
         .flex.center-flex
           .section-number
             h1.large 3
           .section-text
             img(src='images/skipper3-assets4.png' style='width: 150px; height: auto')
             h1=index.par4.header
-        br
+        +spacer()
         h4!=index.par4.sub
-        br
+        +spacer()
         //- h4.
         //-   Send a sample update to your phone:
         //- form(action='')
         //-   input(type='text' placeholder='Enter phone number')
         //-   button Submit
-        br
+        +spacer()
 
         img(src='images/skipper3-assets5.png' style='max-width: 500px; width: 90%;margin: auto;')
       
-      br
-      br
-      br
-      br
+      +spacer(8)
       - var date = new Date;
       .centered
         h1 Ready to get started?

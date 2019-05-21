@@ -1,0 +1,73 @@
+extends layout-home
+block content
+  include ../includes/data_how.pug
+  .bg-full
+    h1=how.hero
+  .reg-height
+  .primary-container
+    .article
+      +spacer()
+      h1=how.par1.header
+      h4=how.par1.sub
+      +spacer(2)
+      img(src='images/wren-calculator.png' style='width: 75px; height: auto;')
+      +spacer(2)
+      h1=how.section1.header
+      
+      // Establishing baseline
+      h4.sub=how.section1.sub   
+      h4!=how.section1.body1
+      ul
+        li #[strong Postal code] (this forms the basis of our estimate—typically, folks who live in a certain zip code get electricity from the same sources, buy similar products, and in general have elements of their carbon footprint in common)
+        li #[strong Driving and transportation habits] (usually the biggest contributor to individual carbon footprint, by a wide margin)
+        li #[strong Heating and air conditioning usage] (another large contributor)
+        li #[strong What you eat] (Vegetarians and vegans have little carbon footprint from their diet, whereas folks who eat a lot of red meat have larger carbon footprints coming from diet)     
+      h4!=how.section1.body2
+      +spacer()
+      
+      // Spikes
+      h4.sub=how.section2.header
+      h4!=how.section2.sub
+      +spacer()
+      
+      // Offsetting your footprint
+      h4.sub=how.par2.header
+      h4=how.par2.sub
+      +spacer()
+      
+      // Offset projects
+      h4.sub=how.section3.header
+      h4=how.section3.sub
+      ul
+        li #[strong Measurable] - We only support projects that have a clear protocol for measuring how much greenhouse gas they prevented or sequestered. This way, you can be sure projects you support offset as much carbon as they claim to.
+        li #[strong Additional] - All projects we support would not happen without your help. In general, they're not economically feasible without being paid for the CO2 they offset.
+        li #[strong Transparent] - We prioritize projects that share as much information as possible. This way, anyone can verify that the offset project is additional, measurable, and overall a great way to make some small dent in the climate crisis we face.
+      +spacer(2)
+
+      // Your portfolio
+      h1=how.section4.header
+      h4!=how.section4.sub
+      +spacer(2)
+
+      // Tracking your impact
+      h1=how.section5.header
+      h4!=how.section5.sub
+
+    +spacer(6)
+    - var date = new Date;
+    .centered
+      h1 Ready to get started?
+      h4 Start offsetting your #[strong #{date.toLocaleString('en-us', { month: 'long' })}] emissions in five minutes.
+      br
+      br
+
+      +form()
+
+
+
+      
+
+
+
+
+

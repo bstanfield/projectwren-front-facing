@@ -102,3 +102,17 @@ mixin offsetCard(obj)
             .card-text
                 h4 !{obj.text}
                 a(href=obj.url) View projects →
+
+mixin spacer(x)
+    - let num;
+    if typeof x == 'undefined'
+        - num = 1;
+    else
+        - num = x;
+    while num > 0 
+        br
+        - num--
+
+
+
+

@@ -1,7 +1,7 @@
 @import 'fonts.scss';
 @import 'mq.scss';
 
-$bg-color: #F4F3F0;
+$bg-color: rgb(245, 245, 245);
 
 html,
 body {
@@ -139,29 +139,28 @@ a .banner:hover {
   float: right;
 }
 
-  .nav-menu a:hover {
-    color: rgb(0, 0, 0) !important;
-  }
-
   .nav-menu-home a {
-    color: white !important;
+    color: white;
     opacity: 1;
   }
 
-    .nav-menu-home a:hover {
-      color: white !important;
-      opacity: 1;
-    }
+  .nav-menu-home a:hover {
+    color: white;
+    background-color: rgba(17, 17, 17, 0.3);
+  }
 
 .nav-link {
-  padding-right: 30px;
+  margin-right: 25px;
   font-size: 16px;
-  color: #333333;
+  padding: 5px 7px;
+  border-radius: 3px;
+  color: #5c5c5c;
 }
 
-  .nav-link:hover {
-    color: $darkgreen !important;
-  }
+.nav-link:hover {
+  color: inherit;
+  background-color: rgb(228, 228, 228);
+}
 
 .nav-logo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -665,11 +664,16 @@ img.hero-img {
     }
 
   .article {
-    padding: 40px 30px 10px 30px; 
-  }
+    max-width: 750px;
+    width: 100%;
+    h1 {
+      font-family: 'Inter Heavy';
+    }
 
-  .article h4 {
-    margin-bottom: 20px;
+    li {
+      list-style-type: square;
+      font-style: normal;
+    }
   }
 
   .research-txt{
@@ -922,6 +926,39 @@ img.hero-img {
   padding-bottom: 0px !important;
   margin-bottom: -50px !important;
 }
+
+.sub {
+  color: $body;
+  font-family: 'Inter Bold';
+  margin-bottom: 6px;
+  margin-top: 5px;
+}
+
+.bg-full {
+  width: 100%;
+  position: absolute;
+  height: 350px;
+  color: #1b3b34;
+  background: linear-gradient(0deg,rgba(27, 59, 52, .3),rgba(27, 59, 52, .1  )), url('https://images.unsplash.com/photo-1554769945-af468c934022?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+  background-image: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: 5%;
+  background-attachment: fixed;
+
+  h1 {
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+    font-size: 60px;
+  }
+}
+
+  .reg-height {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 35px;
+  }
 
 .background-sand {
   background-color: #edda7f;

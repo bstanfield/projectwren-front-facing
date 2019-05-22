@@ -132,12 +132,16 @@ li {
     }
 
 a {
-    cursor: pointer;
+    cursor: pointer !important;
     color: $orange;
     text-decoration: none !important;
     font-size: $medium;
     transition: 0.3s ease-in-out;
 }
+
+    a:focus {
+        outline: none !important;
+    }
 
     a:hover {
         color: rgb(176, 117, 8);
@@ -171,6 +175,14 @@ span.code:hover {
     color: blue;
     border: 1px solid rgb(191, 191, 199);
 }
+
+    .tippy {
+        cursor: pointer !important;
+    }
+
+    span:focus {
+        outline: none;
+    }
 
 hr {
     border-top: 1px solid #a4a4a4;

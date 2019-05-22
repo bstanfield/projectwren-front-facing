@@ -1,0 +1,39 @@
+extends layout-home
+block content
+  .bg-full
+    h1 References
+  .reg-height
+  .primary-container
+    .article
+      +textBlock({
+        header: 'References',
+        par: `We're a group of students and recent graduates working to mitigate climate change. We built Wren because carbon emissions as an individual are currently unavoidable, but we don't want to be responsible for the climate crisis.
+
+        We know it will take more than carbon offsets to stop the climate crisis, but we think allowing individuals to offset their carbon footprint is a promising first step.`
+      })
+      +spacer(1)
+      hr
+      h4.sub Footnotes:
+      +spacer(1)
+
+      +textBlock({
+        sub: 'Example footnote #1',
+        par: `We are all students from the University of Southern California at the Iovine & Young Academy. Link to the Academy website: <a href='https://www.iovine-young.usc.edu'>iovine-young.usc.edu</a>`,
+        anchor: 'test'
+      })
+
+      +textBlock({
+        sub: 'Example footnote #2',
+        par: `Blah blah blah...`,
+        anchor: 'tapingo'
+      })
+
+    +callToAction()
+
+
+      
+
+
+
+
+

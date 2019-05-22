@@ -85,7 +85,6 @@ mixin icon(c)
 mixin navItems()
     a.nav-link(href='about.html') About us
     a.nav-link(href='how.html') How it works
-    a.nav-link(href='partners.html') Partners
     a.nav-link.demo-link(href='') #{buttonVal}
 
 mixin infoLink(obj)
@@ -118,7 +117,6 @@ mixin splitStringOnBreak(string)
     - let splitArr = string.split("\n");
     - splitArr = splitArr.filter(x => x != '');
     - splitArr = splitArr.filter(x => x != '        ');
-    - console.log(splitArr);
     each split in splitArr
         .par-section
             h4!=split
@@ -135,6 +133,8 @@ mixin callToAction()
       +form()
 
 mixin textBlock(text)
+    if text.anchor
+        a(class='anchor' name=text.anchor)
     if text.header
         h1!=text.header
     if text.sub

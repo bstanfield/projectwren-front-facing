@@ -1,7 +1,7 @@
 head
   meta(charset="utf-8")
   meta(name="viewport" content="width=device-width")
-  <meta name="google-site-verification" content="SFBZWqH5jLQ-vvjGewZmi5mvYXfsJ2d5U3qLem1wUX0" />
+  <meta name="google-site-verification" content="SFBZWqH5jLQ-vvjGewZmi5mvYXfsJ2sd5U3qLem1wUX0" />
 
   //- FontAwesome
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -9,6 +9,22 @@ head
   //- CSS Compile & Google Fonts
   link(rel="stylesheet" href="/app.css")
   <link href="https://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet">
+
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
+
+  script.
+    tippy('.tippy', {
+      theme: 'skipper',
+      animation: 'shift-away',
+      animateFill: false,
+      duration: 200,
+      arrow: true,
+      arrowType: 'round',
+      allowHTML: true,
+      trigger: 'click',
+      interactive: true
+    })
   
   script.
     window.dataLayer = window.dataLayer || [];

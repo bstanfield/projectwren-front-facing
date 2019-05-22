@@ -18,7 +18,7 @@ block content
           img(src='images/carbon-graphic1.png' style='width: 300px;')
         +textBlock({
           header: 'Carbon neutral is affordable',
-          par: `The average American can offset their entire <span class='tooltip1'>carbon_footprint</span> for less than $20/month on our platform. This is how it's done:`
+          par: `The average American can offset their entire <span class='tooltip1'>carbon_footprint</span> for less than $20/month on our platform.<span class='footnote test 1'></span> This is how it's done:`
         })
 
       +spacer(6)
@@ -28,7 +28,7 @@ block content
           number: 1,
           image: 'skipper3-assets4.png',
           header: 'Pick the way you offset your carbon',
-          par: `We work with experts in <span class='tooltip2'>carbon_sequestration</span> to permanently offset carbon. Wren gives you options for offsetting your emissions in the way you believe is most important.`
+          par: `We work with experts in <span class='tooltip2'>carbon_sequestration</span> to permanently offset carbon.<span class='footnote tapingo 2'></span> Wren gives you options for offsetting your emissions in the way you believe is most important.`
         })(style='width: 150px; height: auto;')
         
       +spacer(2)
@@ -85,21 +85,3 @@ block content
         img(src='images/skipper3-assets5.png' style='max-width: 500px; width: 90%;margin: auto;')
       
       +callToAction()
-
-  
-  
-  
-  <script src="https://unpkg.com/popper.js@1"></script>
-  <script src="https://unpkg.com/tippy.js@4"></script>
-  
-  script.
-    tippy('.tippy', {
-      theme: 'skipper',
-      animation: 'shift-away',
-      animateFill: false,
-      duration: 200,
-      arrow: true,
-      arrowType: 'round',
-      allowHTML: true,
-      trigger: 'click mouseenter'
-    })

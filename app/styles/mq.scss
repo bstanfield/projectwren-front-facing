@@ -91,11 +91,6 @@
 }
 
 @media screen and (max-width: 850px) {
-    .nav-items {
-        height: 100%;
-        padding-bottom: 12px !important;
-    }
-
     .section-number {
         margin: auto;
         h1 {
@@ -330,8 +325,7 @@
     }
     
     .nav-menu {
-        margin-top: -15px;
-        float: none;
+        display: none !important;
     }
 
     .hero-card {

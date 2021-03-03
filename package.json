@@ -14,7 +14,7 @@
     "jstransformer-coffee-script": "^1.1.1",
     "jstransformer-markdown-it": "^2.1.0",
     "ngrok": "^3.0.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
